@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # my app:
     'event_logger_app',
+    'event_logger_api',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
