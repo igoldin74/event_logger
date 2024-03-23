@@ -25,11 +25,10 @@ class EventEntryApiView(APIView):
         '''
         data = {
             'event': request.data.get('event'), 
-            'client_ip': request.data.get('client_ip')
         }
         serializer = EventEntrySerializer(data=data)
         if serializer.is_valid():
-            serializer.save()
+            serializer.save(user=self.request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

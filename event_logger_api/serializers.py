@@ -4,7 +4,7 @@ from event_logger_app.models import EventEntry, Event
 class EventEntrySerializer(serializers.ModelSerializer):
     class Meta:
         model = EventEntry
-        fields = ["event", "client_ip", "timestamp"]
+        fields = ["event", "user", "timestamp"]
 
 
 class EventSerializer(serializers.ModelSerializer):
